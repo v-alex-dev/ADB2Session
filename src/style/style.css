@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ /*Nav*/
+nav{
+    background-color: rgb(99, 85, 228);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav a {
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+nav > div.menu > ul{
+    flex-direction: row;
+    display: flex;
+}
+
+nav > div.menu > ul > li{
+    padding: 0 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: black;
+ }
+
+nav a:hover{
+    background: rgb(23, 59, 218);
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+/*news*/
+
+.news {
+    padding: 5rem;
+    
+}
+
+.news > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstnews {
+    text-align: center;
+    background-color: bisque;
+    height: 6rem;
+    width: 12rem;
+}
+
+.secondnews {
+    text-align: center;
+    background-color: rgb(235, 192, 99);
+    height: 3rem;
+    width: 12rem;
+}
+
+.thirdnews {
+    text-align: center;
+    background-color: rgb(247, 158, 56);
+    height: 3rem;
+    width: 12rem;
+}
+
+/*article et list categorie*/
+
+.corp {
+    display: flex;
+}
+
+.allart{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.article {
+    background: plum;
+    margin: 7em;
+    width: 10em;
+    height: 10em;
+    text-align: center;
+}
+
+.listecategorie > a {
+    text-decoration: none;
+    display: flex;
+    width: 80%;
+    margin: 1em;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.listecategorie > a:hover{
+    background: rgb(250, 4, 4);
+    border-radius: 1em;
+}
+
+/*footer*/
+
+footer{
+    text-align: center;
+    padding: 1rem;
+    background-color: rgb(99, 85, 228);
+    width: 100%;
+ 
+}
+
+footer > p{
+    color: black;
+}

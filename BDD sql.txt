@@ -1,10 +1,9 @@
 CREATE TABLE role(
     roleId INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     NomRole VARCHAR(100)
-);
-
+    );
 CREATE TABLE users(
-    userId INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	userId INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nom VARCHAR(100),
     prenom VARCHAR(100),
     login VARCHAR(100),
@@ -14,20 +13,18 @@ CREATE TABLE users(
     roleId INT NOT NULL,
     CONSTRAINT fk_users_roleId__role_roleId
     FOREIGN KEY(roleId) REFERENCES role(roleId)
-);
+    );
 
 CREATE TABLE categorieArticle(
     categorieArticleId INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     NomCategorie VARCHAR(100)
-);
-
+    );
 CREATE TABLE misEnAvant(
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     articleId INT NOT NULL,
-    CONSTRAINT fk_miseEnAvant_articleId__article_articleId
+    CONSTRAINT fk_miseEnAvant_articleId__article_articleId 
     FOREIGN KEY(articleId) REFERENCES article(articleId)
-);
-
+    );
 CREATE TABLE articles(
     articleId INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     titre VARCHAR(250),
@@ -38,12 +35,11 @@ CREATE TABLE articles(
     onTop INT,
     CONSTRAINT fk_articles_auteurId__users_userId
     FOREIGN KEY(auteurId) REFERENCES users(userId)
-);
-
+    );
 CREATE TABLE commentaire(
     articleId INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     userId INT NOT NULL,
     contenu TEXT,
     CONSTRAINT fk_commentaire_userId__users_userId
     FOREIGN KEY(userId) REFERENCES users(userId)
-);
+	);
