@@ -47,7 +47,7 @@
                 if($donnees["mdp"] == $sel)
                 {
 
-                    $_SESSION["connect"] = true;
+                    // $_SESSION["connect"] = true;
 
                     $_SESSION["user"] = 
                     [
@@ -76,19 +76,22 @@
 
                     exit();
 
+
                 }
 
                 else
-                {
+                {                  
 
-                    
-
-                    header("location: ../../src/page/login.php?erreur=true&msg= Pseudo ou mot de passe incorrect.");
+                    header("location: ../../src/page/login.php?erreur=true&msg=Le mot de passe est incorrect!");
 
                     exit();
                 
                 }
             }
         }
+        // Si on arrive ici. C'est que le pseudo est incorrect.
+        $requete->closeCursor();
+        header("location: ../../src/page/login.php?erreur=true&msg=Le pseudo est incorrect!");
+        exit();
     }
 ?>

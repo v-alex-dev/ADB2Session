@@ -15,7 +15,7 @@
 <section class="formulaire">
     <form action="" method="post" class="login">
         <?php
-            if ($_GET["erreur"] == true)
+            if(isset($_GET["erreur"]) && $_GET["erreur"] == true)
             {
                 echo "<h2>".$_GET["msg"]."</h2>";
             }
