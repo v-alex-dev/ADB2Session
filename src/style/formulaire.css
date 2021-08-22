@@ -1,7 +1,7 @@
 .formulaire
 {
     display: flex;
-    background-color: #ffffff;
+    background-color: rgb(226, 226, 226);
     width: 50%;
     justify-content: center;
     flex-direction: column;
@@ -17,8 +17,9 @@
 {
     margin: 1rem;
     padding: 1rem;
-    background-color: cadetblue;
+    background-color: lightcyan;
     border-radius: 1rem;
+
 }
  a
 {
@@ -46,4 +47,26 @@ td
     background-color: cadetblue;
     border-radius: 1rem;
     width: 20rem;
+}
+
+
+.formulaireButton
+{
+    display: flex;
+    background-color: rgb(226, 226, 226);
+    width: 50%;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 20rem auto;
+    padding: 1rem;
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0/ 29%);
+    border-radius: 30px;
+}
+
+.buttonTampon
+{
+    padding: 1rem;
+    background-color: rgb(204, 204, 204);
+    margin: 1rem;
+    border-radius: 25px;
 }

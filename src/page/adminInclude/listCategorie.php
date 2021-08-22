@@ -9,14 +9,19 @@
             $secuCategorieId = htmlspecialchars($_GET["value"]);
             $categorieId = intval($secuCategorieId);
             deleteCategorie($categorieId);
-            header("location: ../../src/page/admin.php?choix=listeCategorie");
+            header("location: ../../src/page/admin.php?choix=listeCategorie#ancre");
             exit();
         }
 
-        // condition pour addcategorie
+        if(isset($_POST["categorie"]) && !empty($_POST["categorie"]))
+        {
+            sendCategorie($_POST["categorie"]);
+            header("location: ../../src/page/admin.php?choix=listeCategorie");
+            exit();
+        }
     }
 ?>
-    <table class="formulaire">
+    <table class="formulaire" id="ancre">
         <tr>
             <th><h4>Nom de la catégorie</h4></th>
             <?php
@@ -35,6 +40,7 @@
                 <tr>
                     <td><?=$value["nomCategorie"] ?></td>
                 <?php
+                //Bouton supprimer une catégorie
                     if(isset($_SESSION["user"]["role"]) && $_SESSION["user"]["role"] == "Admin")
                     {
                         ?>
@@ -48,6 +54,12 @@
             if(isset($_SESSION["user"]["role"]) && $_SESSION["user"]["role"] == "Admin")
             {
                 // formulaire pour add une catégorie
+            ?>
+                <form action="" method="post">
+                <td><input type="text" name="categorie" value="" require placeholder="Ajouter une catégorie"></td>
+                <td><input type="submit" value="Envoyer" ></td></form>
+            <?php
             }
+            
         ?>
     </table>

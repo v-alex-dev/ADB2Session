@@ -36,7 +36,7 @@
                 if(isset($_SESSION["user"]["role"]) && $_SESSION["user"]["role"] == "modérateur"  || isset($_SESSION["user"]["role"]) && $_SESSION["user"]["role"] == "Admin" )
                 {
                     ?>
-                        <li><a href="#">Rédiger</a></li>
+                        <li><a href="../../src/page/redactionArticle.php">Rédiger</a></li>
                     <?php
                 }
 
